@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MultilingualLogin.Views.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resx="clr-namespace:MultilingualLogin.Resources;assembly=MultilingualLogin">
+    
+    <StackLayout
+        FlowDirection="LeftToRight"
+        Margin="5"
+        HorizontalOptions="Center"
+        Orientation="Vertical"
+        VerticalOptions="Center"
+        WidthRequest="300">
+        <Frame CornerRadius="10" BackgroundColor="LightBlue">
+      <StackLayout Spacing="5" Margin="20">
+          <Grid ColumnSpacing="5" RowSpacing="5" >
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"></RowDefinition>
+                  <RowDefinition Height="Auto"></RowDefinition>
+              </Grid.RowDefinitions>
+                    <Label Text="{x:Static resx:Strings.UserName}"
+                           VerticalOptions="Center" 
+                           Grid.Column="0"
+                           Grid.Row="0"/>
+                    <Label Text="{x:Static resx:Strings.Password}"
+                           VerticalOptions="Center" 
+                           Grid.Column="0"
+                           Grid.Row="1"/>
+                    <Entry Text="{Binding UserNameText}" Grid.Column="1" Grid.Row="0" WidthRequest="150" TextColor="MediumBlue" Placeholder="{x:Static resx:Strings.MobileNo}" PlaceholderColor="LightBlue" MaxLength="11" Keyboard="Telephone"></Entry>
+                    <Entry Text="{Binding PassWordText}" Grid.Column="1" Grid.Row="1" WidthRequest="150" IsPassword="True" TextColor="MediumBlue"></Entry>
+                </Grid>
+          <Button Text="{x:Static resx:Strings.Login}" Command="{Binding LoginCommand}"></Button>
+            </StackLayout> 
+        </Frame>
+       
+    </StackLayout>
+  
+</ContentPage>
